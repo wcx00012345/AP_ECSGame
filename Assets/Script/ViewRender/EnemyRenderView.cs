@@ -8,7 +8,7 @@ namespace Script
     {
         protected override void OnDestroyFlagHander()
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 }

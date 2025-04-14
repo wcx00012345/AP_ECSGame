@@ -13,7 +13,6 @@ namespace Script.Other
             return new Vector2(Mathf.Cos(a), Mathf.Sin(a));
         }
         
-        
         public static float Vector2D2Angle(this Vector2 dir)
         {
             return Vector2.SignedAngle(Vector2.up, dir);
@@ -34,7 +33,5 @@ namespace Script.Other
         {
             (entity as IScriptComponentsIdEntity).ReplaceScriptComponentsId(entity.creationIndex);
         }
-        
-        
     }
 }

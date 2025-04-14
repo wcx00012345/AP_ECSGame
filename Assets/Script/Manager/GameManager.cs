@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using Script;
 using Script.Other;
+using Script.Pool;
 using UnityEngine;
 using Unity;
 
@@ -10,18 +12,33 @@ using Unity;
 /// </summary>
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
+    
+    public static Contexts Contexts => Instance.mContexts;
+    
     private GameSystem mGameSystem;
+    private Contexts mContexts;
     private void Awake()
     {
-        mGameSystem = new GameSystem(Contexts.sharedInstance);
+        if (Instance != null)
+        {
+            Destroy(Instance.gameObject);
+        }
+
+        Instance = this;
+        
+        mContexts = Contexts.sharedInstance;
+        mContexts.SubscribeId();
+
+        var phyEntity = mContexts.physics.CreateEntity();
+        phyEntity.AddScriptComponentsPhysics(new List<CollisionInfo>());
+        
+        mGameSystem = new GameSystem(mContexts);
     }
 
     private void Start()
     {
         //用法要求
-        var cont = Contexts.sharedInstance;
-        cont.SubscribeId();
-        
         mGameSystem.Initialize();
         
     }
@@ -31,6 +48,13 @@ public class GameManager : MonoBehaviour
         mGameSystem.Execute();
         mGameSystem.Cleanup();
     }
+    
+    
+    private void FixedUpdate()
+    {
+
+    }
+    
 
     private void OnDestroy()
     {

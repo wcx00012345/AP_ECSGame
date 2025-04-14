@@ -12,21 +12,23 @@ public static class GameComponentsLookup {
     public const int ScriptComponentsDestoryFlag = 1;
     public const int ScriptComponentsId = 2;
     public const int ScriptComponentsLife = 3;
-    public const int ScriptComponentsPlayer = 4;
-    public const int ScriptComponentsPos = 5;
-    public const int ScriptComponentsRender = 6;
-    public const int ScriptComponentsRotation = 7;
-    public const int ScriptComponentsSpeed = 8;
-    public const int ScriptComponentsTarget = 9;
-    public const int ScriptComponentsDestoryFlagListener = 10;
+    public const int ScriptComponentsPhysicsTag = 4;
+    public const int ScriptComponentsPlayer = 5;
+    public const int ScriptComponentsPos = 6;
+    public const int ScriptComponentsRender = 7;
+    public const int ScriptComponentsRotation = 8;
+    public const int ScriptComponentsSpeed = 9;
+    public const int ScriptComponentsTarget = 10;
+    public const int ScriptComponentsDestoryFlagListener = 11;
 
-    public const int TotalComponents = 11;
+    public const int TotalComponents = 12;
 
     public static readonly string[] componentNames = {
         "ScriptComponentsCreateGameObjCompont",
         "ScriptComponentsDestoryFlag",
         "ScriptComponentsId",
         "ScriptComponentsLife",
+        "ScriptComponentsPhysicsTag",
         "ScriptComponentsPlayer",
         "ScriptComponentsPos",
         "ScriptComponentsRender",
@@ -41,6 +43,7 @@ public static class GameComponentsLookup {
         typeof(Script.Components.DestoryFlag),
         typeof(Script.Components.IdComponent),
         typeof(Script.Components.LifeComponent),
+        typeof(Script.Components.PhysicsTag),
         typeof(Script.Components.PlayerComponent),
         typeof(Script.Components.PosComponent),
         typeof(Script.Components.RenderComponent),

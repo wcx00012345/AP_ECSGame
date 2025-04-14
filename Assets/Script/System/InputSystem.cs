@@ -14,7 +14,7 @@ namespace Script.System
         {
          
             mContext = context;
-            //mGroup = mContext.game.GetGroup()
+            //mGroup = mContext.game.GetGroup(GameMatcher.)
         }
         
         public void Execute()

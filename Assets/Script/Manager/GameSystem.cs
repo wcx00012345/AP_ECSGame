@@ -25,7 +25,8 @@ public sealed class GameSystem : Feature
         
         //具体的操作预制体渲染
         Add(new RenderSystem(context));
-        
+
+        Add(new PhysicsSystem(context));
         //生命周期
         Add(new LifeTimeSystem(context));
         //销毁

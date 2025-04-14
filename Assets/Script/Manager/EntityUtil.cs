@@ -11,6 +11,7 @@ namespace Script
         {
             var playerEntity = Contexts.sharedInstance.game.CreateEntity();
             playerEntity.isScriptComponentsPlayer = true;
+            playerEntity.isScriptComponentsPhysicsTag = true;
             playerEntity.AddScriptComponentsPos(Vector2.zero);
             playerEntity.AddScriptComponentsSpeed(Vector2.zero);
             playerEntity.AddScriptComponentsRotation(0);
@@ -24,6 +25,7 @@ namespace Script
         {
             var entity = contests.game.CreateEntity();
             entity.AddScriptComponentsCreateGameObjCompont(GameDefine.EnemyPath);
+            entity.isScriptComponentsPhysicsTag = true;
             entity.AddScriptComponentsPos(pos);
             entity.AddScriptComponentsRotation(rot);
             entity.AddScriptComponentsSpeed(sd);
@@ -36,6 +38,7 @@ namespace Script
         {
             var entity = contests.game.CreateEntity();
             entity.AddScriptComponentsCreateGameObjCompont(GameDefine.BoomPath);
+            entity.isScriptComponentsPhysicsTag = true;
             entity.AddScriptComponentsPos(pos);
             entity.AddScriptComponentsRotation(rot);
             entity.AddScriptComponentsSpeed(sd);
